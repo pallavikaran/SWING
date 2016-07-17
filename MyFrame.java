@@ -1,0 +1,36 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+class  MyFrame extends JFrame
+{	JButton b1,b2;
+	JTextField t1;
+		MyFrame()
+	{	
+			setVisible(true);			setSize(300,400);
+			setLocation(400,250);
+			b1= new JButton("Click");			b2= new JButton("Clear");
+			t1= new JTextField(10);
+			setLayout(new FlowLayout());
+			setTitle("MyFrame");
+			b1.addActionListener(new ActionListener(){	
+				public void actionPerformed(ActionEvent ae)
+				{					
+					t1.setText(t1.getText()+"Ashish");
+				}				
+			});
+	
+			b2.addActionListener(new ActionListener(){	
+				public void actionPerformed(ActionEvent ae)
+				{					
+					t1.setText("");
+				}				
+			});
+			add(b1);			add(t1);			add(b2);
+	}
+	
+	public static void main(String[] args) 
+	{
+		 new MyFrame();
+		System.out.println("Hello World!");
+	}
+}
